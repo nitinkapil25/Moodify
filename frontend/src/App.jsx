@@ -1,20 +1,24 @@
 import { useState } from 'react'
-import FacialExpression from './components/FacialExpression.jsx'
+import FacialExpression from './components/FacialExpression'
+import MoodSongs from './components/MoodSongs'
 import './App.css'
-import MoodSongs from './components/MoodSongs.jsx'
 
 function App() {
-  // const [count, setCount] = useState(0)
-
-  const [songs, setsongs] = useState([
-   
-   ])
+  const [songs, setsongs] = useState([])
 
   return (
-    <>
-      <FacialExpression setsongs={setsongs} />
-      <MoodSongs songs={songs} />
-    </>
+    <div className="app">
+      {/* Header / Mood Detector */}
+      <div className="app-header">
+        <h1 className="logo">Moodify 🎧</h1>
+        <FacialExpression setsongs={setsongs} />
+      </div>
+
+      {/* Songs Section */}
+      <div className="app-content">
+        <MoodSongs songs={songs} />
+      </div>
+    </div>
   )
 }
 
