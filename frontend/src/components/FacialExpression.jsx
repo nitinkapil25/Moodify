@@ -53,8 +53,8 @@ export default function FacialExpression({ setsongs }) {
     setMood(detectedMood);
 
     try {
-      const res = await axios.get(
-        `http://localhost:3000/songs?mood=${detectedMood}`
+     const res = await axios.get(
+  `${import.meta.env.VITE_API_URL}/songs?mood=${detectedMood}`
       );
       setsongs(res.data.songs);
     } catch {
